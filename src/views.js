@@ -51,6 +51,7 @@ function layout({ title, description = site.description, path = '/', body, jsonl
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${canonical}">
 <meta name="theme-color" content="#FCFAF7">
+${site.metaDomainVerification ? `<meta name="facebook-domain-verification" content="${esc(site.metaDomainVerification)}">` : ''}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${site.name}">
 <meta property="og:title" content="${esc(fullTitle)}">
@@ -93,6 +94,7 @@ ${trustBar()}
       <a class="wordmark wordmark--light" href="/">CITADINA</a>
       <p class="footer__tag">${site.tagline}</p>
       <p class="footer__muted">${site.city}</p>
+      <ul class="footer__legal">${site.identity.map(([k, v]) => `<li>${k}: ${esc(v)}</li>`).join('')}</ul>
     </div>
     <div>
       <h2 class="eyebrow">Tienda</h2>
@@ -106,13 +108,13 @@ ${trustBar()}
       <h2 class="eyebrow">Contacto</h2>
       <ul>
         <li><a href="${igUrl}" target="_blank" rel="noopener">Instagram</a></li>
-        ${site.whatsapp ? `<li><a href="${chatHref('Hola, quiero más información.')}" target="_blank" rel="noopener">WhatsApp</a></li>` : ''}
+        ${site.whatsapp ? `<li><a href="${chatHref('Hola, quiero más información.')}" target="_blank" rel="noopener">${site.phone} · WhatsApp</a></li>` : ''}
         <li><a href="mailto:${site.email}">${site.email}</a></li>
         <li><a href="/contacto">Escríbenos</a></li>
       </ul>
     </div>
   </div>
-  <div class="container footer__bottom">© ${year} CITADINA. Todos los derechos reservados.</div>
+  <div class="container footer__bottom"><span>© ${year} CITADINA${site.legal.name ? ` · ${esc(site.legal.name)}` : ''}. Todos los derechos reservados.</span><a href="https://www.sic.gov.co" target="_blank" rel="noopener">Superintendencia de Industria y Comercio</a></div>
 </footer>
 <script src="/js/main.js?v=1" defer></script>
 </body>
@@ -225,8 +227,18 @@ ${reviews}
       logo: site.url + '/img/icon-512.png',
       image: site.url + '/img/og-citadina.jpg',
       email: site.email,
-      address: { '@type': 'PostalAddress', addressLocality: 'Barranquilla', addressCountry: 'CO' },
-      sameAs: [igUrl],
+      ...(site.phone && { telephone: site.phone }),
+      ...(site.legal.name && { legalName: site.legal.name }),
+      ...(site.legal.taxId && { taxID: site.legal.taxId }),
+      address: {
+        '@type': 'PostalAddress',
+        ...(site.legal.address && { streetAddress: site.legal.address }),
+        addressLocality: 'Barranquilla',
+        addressRegion: 'Atlántico',
+        addressCountry: 'CO',
+      },
+      openingHours: 'Mo-Sa 09:00-18:00',
+      sameAs: [igUrl, ...(site.whatsapp ? [`https://wa.me/${site.whatsapp}`] : [])],
     },
   });
 }
@@ -360,8 +372,10 @@ function contact() {
       <li>${icon('instagram')}<a href="${igUrl}" target="_blank" rel="noopener">@${site.instagram}</a></li>
       ${site.whatsapp ? `<li>${icon('chat')}<a href="${chatHref('Hola, quiero más información.')}" target="_blank" rel="noopener">WhatsApp</a></li>` : ''}
       <li>${icon('mail')}<a href="mailto:${site.email}">${site.email}</a></li>
-      <li>${icon('pin')}<span>${site.city}</span></li>
+      <li>${icon('pin')}<span>${site.legal.address ? `${esc(site.legal.address)}, ` : ''}${site.city}</span></li>
     </ul>
+    <p class="contact__hours">${site.legal.hours}</p>
+    ${site.legal.name ? `<p class="contact__hours">${esc(site.legal.name)}${site.legal.taxId ? ` · NIT ${esc(site.legal.taxId)}` : ''}</p>` : ''}
   </div>
   <form class="form" data-contact action="mailto:${site.email}" method="post" enctype="text/plain">
     <label>Nombre<input name="nombre" autocomplete="name" required></label>

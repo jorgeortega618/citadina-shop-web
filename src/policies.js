@@ -1,6 +1,8 @@
 // Textos legales base. Revísalos con tu asesor antes de publicar.
 const { site } = require('./data');
 
+const idList = `<ul>${site.identity.map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('')}</ul>`;
+
 module.exports = {
   envios: {
     title: 'Envíos',
@@ -39,6 +41,8 @@ module.exports = {
     title: 'Política de privacidad',
     body: `
 <p>En CITADINA respetamos tu privacidad. Esta política describe cómo tratamos tus datos personales conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013.</p>
+<h2>Responsable del tratamiento</h2>
+${idList}
 <h2>Datos que recopilamos</h2>
 <p>Nombre, teléfono, correo electrónico y dirección de entrega, únicamente cuando nos los compartes para gestionar un pedido o una consulta.</p>
 <h2>Finalidad</h2>
@@ -48,7 +52,9 @@ module.exports = {
   <li>Enviarte novedades, solo si nos autorizas expresamente.</li>
 </ul>
 <h2>Tus derechos</h2>
-<p>Puedes conocer, actualizar, rectificar y solicitar la supresión de tus datos en cualquier momento escribiendo a <a href="mailto:${site.email}">${site.email}</a>.</p>
+<p>Puedes conocer, actualizar, rectificar y solicitar la supresión de tus datos, revocar la autorización y presentar quejas ante la Superintendencia de Industria y Comercio.</p>
+<h2>Consultas y reclamos</h2>
+<p>Escríbenos a <a href="mailto:${site.email}">${site.email}</a> indicando tu nombre, documento y solicitud. Respondemos las consultas en máximo 10 días hábiles y los reclamos en máximo 15 días hábiles, según los artículos 14 y 15 de la Ley 1581 de 2012.</p>
 <h2>Seguridad</h2>
 <p>No vendemos ni compartimos tus datos con terceros, salvo con las transportadoras necesarias para entregar tu pedido.</p>
 <h2>Cookies</h2>
@@ -58,6 +64,8 @@ module.exports = {
     title: 'Términos y condiciones',
     body: `
 <p>Al usar citadina.store aceptas estos términos. Te invitamos a leerlos con atención.</p>
+<h2>Identificación del vendedor</h2>
+${idList}
 <h2>Productos y precios</h2>
 <p>Los precios están expresados en pesos colombianos (COP) e incluyen IVA cuando aplique. Los colores pueden variar ligeramente según la pantalla. La disponibilidad se confirma al momento del pedido.</p>
 <h2>Pedidos y pagos</h2>
@@ -67,6 +75,7 @@ module.exports = {
 <h2>Propiedad intelectual</h2>
 <p>Las fotografías, textos y la marca CITADINA son de uso exclusivo de la marca y no pueden reproducirse sin autorización.</p>
 <h2>Contacto</h2>
-<p>${site.city} · <a href="mailto:${site.email}">${site.email}</a></p>`,
+<p>${site.city} · <a href="mailto:${site.email}">${site.email}</a>${site.phone ? ` · ${site.phone}` : ''}</p>
+<p>Si tienes una queja que no hayamos resuelto, puedes acudir a la <a href="https://www.sic.gov.co" target="_blank" rel="noopener">Superintendencia de Industria y Comercio</a>.</p>`,
   },
 };

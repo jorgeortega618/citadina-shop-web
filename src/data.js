@@ -14,7 +14,28 @@ const site = {
   // Mientras esté vacío, los botones de compra abren Instagram Direct.
   whatsapp: process.env.WHATSAPP_NUMBER || '573054139389',
   announcement: 'Envíos a toda Colombia · Contraentrega en Barranquilla',
+  // Identidad legal: debe coincidir EXACTAMENTE con Meta Business Manager, el RUT y la Cámara de Comercio.
+  // Los campos vacíos no se muestran en el sitio.
+  legal: {
+    name: '', // Razón social o titular, p. ej. 'Citadina S.A.S.' o el nombre de la persona natural
+    taxId: '', // NIT con dígito de verificación, p. ej. '901234567-8'
+    address: '', // Dirección comercial, p. ej. 'Calle 84 # 50-20, Local 3'
+    hours: 'Lunes a sábado, 9:00 a. m. – 6:00 p. m.',
+  },
+  // Código de "facebook-domain-verification" de Meta Business (alternativa al TXT en Cloudflare)
+  metaDomainVerification: '',
 };
+
+const w = site.whatsapp;
+site.phone = w ? `+${w.slice(0, 2)} ${w.slice(2, 5)} ${w.slice(5, 8)} ${w.slice(8)}` : '';
+// Datos de identificación del vendedor (Ley 1480 de 2011, art. 50), solo los diligenciados
+site.identity = [
+  ['Titular', site.legal.name],
+  ['NIT', site.legal.taxId],
+  ['Dirección', site.legal.address && `${site.legal.address}, ${site.city}`],
+  ['Teléfono / WhatsApp', site.phone],
+  ['Correo', site.email],
+].filter(([, v]) => v);
 
 const nav = [
   { label: 'Novedades', href: '/coleccion' },

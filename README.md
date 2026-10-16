@@ -1,4 +1,4 @@
-# citadina.shop
+# citadina.store
 
 Sitio oficial de **CITADINA**. Sitio estático generado con Node.js (sin base de datos). Se publica en **Cloudflare Workers** (static assets); `app.js` (Express) queda para desarrollo local o un hosting Node.
 
@@ -32,6 +32,6 @@ npm run dev        # http://localhost:3000
 
 - Build command: *(vacío)* · Deploy command: `npx wrangler deploy`
 - Cada `git push` a `main` despliega automáticamente.
-- Dominio: Settings → Domains & Routes → *Add custom domain* → `citadina.shop` (y `www.citadina.shop`).
+- Dominio: Settings → Domains & Routes → *Add custom domain* → `citadina.store` (y `www.citadina.store`).
 
 Probar el build en local: `npm run build` y abrir `dist/`, o `npx wrangler dev`.

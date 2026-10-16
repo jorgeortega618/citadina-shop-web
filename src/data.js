@@ -3,7 +3,7 @@
 
 const site = {
   name: 'CITADINA',
-  url: 'https://citanida.shop',
+  url: 'https://citadina.shop',
   tagline: 'Siempre contigo',
   description:
     'CITADINA: moda femenina elegante y versátil. Vestidos y sets pensados para acompañarte más de una temporada. Envíos a toda Colombia desde Barranquilla.',

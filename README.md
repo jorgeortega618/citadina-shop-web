@@ -1,4 +1,4 @@
-# citanida.shop
+# citadina.shop
 
 Sitio oficial de **CITADINA**. Node.js + Express, páginas renderizadas en el servidor al arrancar (sin build, sin base de datos).
 
@@ -33,9 +33,9 @@ npm run dev        # http://localhost:3000
    - Node.js version: 18 o superior
    - Application mode: Production
    - Application root: `citadina-shop-web`
-   - Application URL: `citanida.shop`
+   - Application URL: `citadina.shop`
    - Application startup file: `app.js`
    - Variable de entorno opcional: `WHATSAPP_NUMBER`
 3. *Run NPM Install* y luego *Restart*.
-4. cPanel → **Domains** → activar *Force HTTPS Redirect* para citanida.shop (SSL AutoSSL activo).
+4. cPanel → **Domains** → activar *Force HTTPS Redirect* para citadina.shop (SSL AutoSSL activo).
 5. Para actualizar: `git push` a GitHub → cPanel Git → *Update from Remote* → *Restart* en Setup Node.js App.

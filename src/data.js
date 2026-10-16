@@ -33,10 +33,10 @@ const img = (base, n) => Array.from({ length: n }, (_, i) => `${base}-${i + 1}`)
 
 const products = [
   {
-    slug: 'vestido-alba',
-    name: 'Vestido Alba',
+    slug: 'vestido-larissa',
+    name: 'Vestido Larissa',
     category: 'vestidos',
-    price: 139900,
+    price: 132900,
     badge: 'Nuevo',
     short: 'Un mini vestido de líneas puras que se adapta a cada plan. Fácil de llevar, difícil de olvidar.',
     description:
@@ -45,16 +45,16 @@ const products = [
     care: 'Lavar a mano o en ciclo delicado con agua fría. No usar blanqueador. Planchar a temperatura baja por el revés.',
     sizes: ['S', 'M', 'L'],
     colors: [
-      { id: 'cielo', name: 'Azul cielo', hex: '#A9C6E8', images: img('vestido-alba-cielo', 2) },
-      { id: 'durazno', name: 'Durazno', hex: '#EFA98A', images: img('vestido-alba-durazno', 2) },
-      { id: 'chocolate', name: 'Chocolate', hex: '#4A2C24', images: img('vestido-alba-chocolate', 2) },
+      { id: 'cielo', name: 'Azul cielo', hex: '#A9C6E8', images: img('vestido-larissa-cielo', 2) },
+      { id: 'durazno', name: 'Durazno', hex: '#EFA98A', images: img('vestido-larissa-durazno', 2) },
+      { id: 'chocolate', name: 'Chocolate', hex: '#4A2C24', images: img('vestido-larissa-chocolate', 2) },
     ],
   },
   {
     slug: 'set-tiana',
     name: 'Set Tiana',
     category: 'sets',
-    price: 169900,
+    price: 198000,
     badge: 'Nuevo',
     short: 'Una silueta fresca y femenina pensada para llevar completa o combinar por separado.',
     description:

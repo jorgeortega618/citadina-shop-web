@@ -178,12 +178,12 @@ function home() {
 </section>
 
 <section class="feature">
-  <div class="feature__media reveal">${square(1, 'Vestido Alba en azul cielo, durazno y chocolate', '(min-width: 1024px) 50vw, 100vw')}</div>
+  <div class="feature__media reveal">${square(1, 'Vestido Larissa en azul cielo, durazno y chocolate', '(min-width: 1024px) 50vw, 100vw')}</div>
   <div class="feature__content reveal">
-    <p class="eyebrow">Colección destacada · Vestido Alba</p>
+    <p class="eyebrow">Colección destacada · Vestido Larissa</p>
     <h2 class="h2">Tres tonos, una misma intención.</h2>
     <p>Azul cielo, durazno y chocolate. Un corte limpio que se siente especial y se lleva sin esfuerzo, del almuerzo a la cena.</p>
-    <a class="btn btn--ghost" href="/productos/vestido-alba">Descubrir el vestido</a>
+    <a class="btn btn--ghost" href="/productos/vestido-larissa">Descubrir el vestido</a>
   </div>
 </section>
 
@@ -329,7 +329,7 @@ ${others.length ? `<section class="section container">${sectionHead('Completa tu
 function about() {
   const body = `
 <section class="about container">
-  <div class="about__media reveal">${picture('vestido-alba-chocolate-2', 'Modelo con el Vestido Alba en chocolate', { sizes: '(min-width: 1024px) 40vw, 100vw', eager: true })}</div>
+  <div class="about__media reveal">${picture('vestido-larissa-chocolate-2', 'Modelo con el Vestido Larissa en chocolate', { sizes: '(min-width: 1024px) 40vw, 100vw', eager: true })}</div>
   <div class="about__text">
     <p class="eyebrow">Nosotros</p>
     <h1 class="h1">Hecho para acompañarte.</h1>

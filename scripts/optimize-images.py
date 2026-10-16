@@ -7,9 +7,9 @@ SRC, OUT = 'assets', 'public/img'
 os.makedirs(OUT, exist_ok=True)
 
 PRODUCTS = {
-    'vestido-alba-cielo': ['IMG_3254.jpg', 'IMG_3259.jpg'],
-    'vestido-alba-durazno': ['IMG_3289.jpg', 'IMG_3290.jpg'],
-    'vestido-alba-chocolate': ['IMG_3312.jpg', 'IMG_3323.JPG'],
+    'vestido-larissa-cielo': ['IMG_3254.jpg', 'IMG_3259.jpg'],
+    'vestido-larissa-durazno': ['IMG_3289.jpg', 'IMG_3290.jpg'],
+    'vestido-larissa-chocolate': ['IMG_3312.jpg', 'IMG_3323.JPG'],
     'set-tiana-gris': ['IMG_3650.JPG', 'IMG_3645.JPG', 'IMG_3659.JPG', 'IMG_3660.JPG'],
     'set-tiana-rosa': ['IMG_3651.JPG', 'IMG_3653.JPG'],
 }

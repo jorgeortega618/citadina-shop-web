@@ -18,7 +18,8 @@ const site = {
   // Los campos vacíos no se muestran en el sitio.
   legal: {
     name: '', // Razón social o titular, p. ej. 'Citadina S.A.S.' o el nombre de la persona natural
-    taxId: '', // NIT con dígito de verificación, p. ej. '901234567-8'
+    taxId: '1129523997-1', // NIT con dígito de verificación
+    registry: 'Matrícula mercantil 901495 · Cámara de Comercio de Barranquilla',
     address: '', // Dirección comercial, p. ej. 'Calle 84 # 50-20, Local 3'
     hours: 'Lunes a sábado, 9:00 a. m. – 6:00 p. m.',
   },
@@ -32,6 +33,7 @@ site.phone = w ? `+${w.slice(0, 2)} ${w.slice(2, 5)} ${w.slice(5, 8)} ${w.slice(
 site.identity = [
   ['Titular', site.legal.name],
   ['NIT', site.legal.taxId],
+  ['Registro', site.legal.registry],
   ['Dirección', site.legal.address && `${site.legal.address}, ${site.city}`],
   ['Teléfono / WhatsApp', site.phone],
   ['Correo', site.email],

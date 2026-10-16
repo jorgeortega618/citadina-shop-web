@@ -1,6 +1,6 @@
 # citadina.shop
 
-Sitio oficial de **CITADINA**. Node.js + Express, páginas renderizadas en el servidor al arrancar (sin build, sin base de datos).
+Sitio oficial de **CITADINA**. Sitio estático generado con Node.js (sin base de datos). Se publica en **Cloudflare Workers** (static assets); `app.js` (Express) queda para desarrollo local o un hosting Node.
 
 ## Estructura
 
@@ -26,16 +26,12 @@ npm run dev        # http://localhost:3000
 - **Productos**: edita `products` en `src/data.js`. Para fotos nuevas, ponlas en `assets/`, regístralas en `scripts/optimize-images.py` y ejecuta `python scripts/optimize-images.py`.
 - **Reseñas**: agrega reseñas reales en `testimonials` y la sección aparece en el inicio.
 
-## Despliegue en GoDaddy (cPanel → Setup Node.js App)
+## Despliegue en Cloudflare
 
-1. cPanel → **Git™ Version Control** → *Create* → clonar `https://github.com/jorgeortega618/citadina-shop-web.git` en p. ej. `/home/USUARIO/citadina-shop-web`.
-2. cPanel → **Setup Node.js App** → *Create Application*:
-   - Node.js version: 18 o superior
-   - Application mode: Production
-   - Application root: `citadina-shop-web`
-   - Application URL: `citadina.shop`
-   - Application startup file: `app.js`
-   - Variable de entorno opcional: `WHATSAPP_NUMBER`
-3. *Run NPM Install* y luego *Restart*.
-4. cPanel → **Domains** → activar *Force HTTPS Redirect* para citadina.shop (SSL AutoSSL activo).
-5. Para actualizar: `git push` a GitHub → cPanel Git → *Update from Remote* → *Restart* en Setup Node.js App.
+`wrangler.jsonc` ejecuta `npm run build` (genera `dist/`) y publica esa carpeta. En Cloudflare → Workers → el proyecto conectado a GitHub:
+
+- Build command: *(vacío)* · Deploy command: `npx wrangler deploy`
+- Cada `git push` a `main` despliega automáticamente.
+- Dominio: Settings → Domains & Routes → *Add custom domain* → `citadina.shop` (y `www.citadina.shop`).
+
+Probar el build en local: `npm run build` y abrir `dist/`, o `npx wrangler dev`.

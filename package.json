@@ -6,7 +6,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "node --watch app.js"
+    "dev": "node --watch app.js",
+    "build": "node scripts/build.js",
+    "deploy": "npx wrangler deploy"
   },
   "engines": {
     "node": ">=18"

@@ -8,11 +8,11 @@ const site = {
   description:
     'CITADINA: moda femenina elegante y versátil. Vestidos y sets pensados para acompañarte más de una temporada. Envíos a toda Colombia desde Barranquilla.',
   city: 'Barranquilla, Colombia',
-  email: 'hola@citadina.shop',
-  instagram: 'citadina.shop',
+  email: 'lina.comercial@citadina.shop',
+  instagram: '_citadina_',
   // Número en formato internacional sin "+" ni espacios, p. ej. 573001234567.
   // Mientras esté vacío, los botones de compra abren Instagram Direct.
-  whatsapp: process.env.WHATSAPP_NUMBER || '',
+  whatsapp: process.env.WHATSAPP_NUMBER || '573054139389',
   announcement: 'Envíos a toda Colombia · Contraentrega en Barranquilla',
 };
 

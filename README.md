@@ -22,7 +22,7 @@ npm run dev        # http://localhost:3000
 
 ## Editar contenido
 
-- **WhatsApp**: define la variable de entorno `WHATSAPP_NUMBER` (ej. `573001234567`) o edita `site.whatsapp` en `src/data.js`. Mientras esté vacío, los botones de compra abren Instagram Direct.
+- **WhatsApp**: define la variable de entorno `WHATSAPP_NUMBER` (ej. `573001234567`) o edita `site.whatsapp` (actual: 573054139389) en `src/data.js`. Si se vacía, los botones de compra abren Instagram Direct.
 - **Productos**: edita `products` en `src/data.js`. Para fotos nuevas, ponlas en `assets/`, regístralas en `scripts/optimize-images.py` y ejecuta `python scripts/optimize-images.py`.
 - **Reseñas**: agrega reseñas reales en `testimonials` y la sección aparece en el inicio.
 

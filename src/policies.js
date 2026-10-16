@@ -57,7 +57,7 @@ module.exports = {
   terminos: {
     title: 'Términos y condiciones',
     body: `
-<p>Al usar citadina.shop aceptas estos términos. Te invitamos a leerlos con atención.</p>
+<p>Al usar citanida.shop aceptas estos términos. Te invitamos a leerlos con atención.</p>
 <h2>Productos y precios</h2>
 <p>Los precios están expresados en pesos colombianos (COP) e incluyen IVA cuando aplique. Los colores pueden variar ligeramente según la pantalla. La disponibilidad se confirma al momento del pedido.</p>
 <h2>Pedidos y pagos</h2>

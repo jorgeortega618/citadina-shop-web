@@ -3,12 +3,12 @@
 
 const site = {
   name: 'CITADINA',
-  url: 'https://citadina.shop',
+  url: 'https://citanida.shop',
   tagline: 'Siempre contigo',
   description:
     'CITADINA: moda femenina elegante y versátil. Vestidos y sets pensados para acompañarte más de una temporada. Envíos a toda Colombia desde Barranquilla.',
   city: 'Barranquilla, Colombia',
-  email: 'lina.comercial@citadina.shop',
+  email: 'lina.comercial@citanida.shop',
   instagram: '_citadina_',
   // Número en formato internacional sin "+" ni espacios, p. ej. 573001234567.
   // Mientras esté vacío, los botones de compra abren Instagram Direct.

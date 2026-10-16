@@ -67,7 +67,7 @@
       const d = new FormData(form);
       const msg = `Hola, soy ${d.get('nombre')} (${d.get('contacto')}).\n\n${d.get('mensaje')}`;
       if (wa) window.open(chatHref(msg), '_blank', 'noopener');
-      else location.href = `${form.action}?subject=${encodeURIComponent('Contacto desde citadina.shop')}&body=${encodeURIComponent(msg)}`;
+      else location.href = `${form.action}?subject=${encodeURIComponent('Contacto desde citanida.shop')}&body=${encodeURIComponent(msg)}`;
     });
   }
 })();

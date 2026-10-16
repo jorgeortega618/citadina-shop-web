@@ -2,7 +2,7 @@
   "name": "citadina-shop-web",
   "version": "1.0.0",
   "private": true,
-  "description": "Sitio web oficial de CITADINA - citadina.shop",
+  "description": "Sitio web oficial de CITADINA - citanida.shop",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

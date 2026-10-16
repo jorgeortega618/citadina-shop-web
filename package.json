@@ -1,0 +1,18 @@
+{
+  "name": "citadina-shop-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web oficial de CITADINA - citadina.shop",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "compression": "^1.7.5",
+    "express": "^4.21.2"
+  }
+}

@@ -12,7 +12,7 @@ const site = {
   instagram: '_citadina_',
   // Número en formato internacional sin "+" ni espacios, p. ej. 573001234567.
   // Mientras esté vacío, los botones de compra abren Instagram Direct.
-  whatsapp: process.env.WHATSAPP_NUMBER || '573054139389',
+  whatsapp: process.env.WHATSAPP_NUMBER || '', // Desactivado durante la verificación de Meta
   announcement: 'Envíos a toda Colombia · Contraentrega en Barranquilla',
   // Identidad legal: debe coincidir EXACTAMENTE con Meta Business Manager, el RUT y la Cámara de Comercio.
   // Los campos vacíos no se muestran en el sitio.
